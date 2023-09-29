@@ -17,7 +17,7 @@ class AdminUtils{
      */
     public function isLogin(){
         // 获取cookie中的值，并判断此cookie和此ip是否是上一次登录的对应的，否则强制退出
-        $userToken = Cookie::get('usertoken');
+        $userToken = Cookie::get('admintoken');
         $userIp = Request::ip();
         try {
             $userinfo = Db::name("user")->where([
@@ -30,11 +30,11 @@ class AdminUtils{
         if (!$userinfo){
             return false;
         }
-        if ($userinfo['ip']!=$userIp){
-            // 强制退出
-            $this->logout(true);
-            return false;
-        }
+//        if ($userinfo['ip']!=$userIp){
+//            // 强制退出
+//            $this->logout(true);
+//            return false;
+//        }
         return $userinfo;
 
     }
@@ -63,7 +63,7 @@ class AdminUtils{
             return false;
         }
         $userToken = md5($userinfo['account'].$userinfo['pwd'].time().'ymwl');
-        cookie::set('usertoken', $userToken, 86400);
+        cookie::set('admintoken', $userToken, 86400);
         try {
             $userinfo = Db::name("user")->where([
                 'id' => $userinfo['id']
@@ -84,9 +84,9 @@ class AdminUtils{
      * @return void
      */
     public function logout($qz = false){
-        $userToken = Cookie::get('usertoken');
+        $userToken = Cookie::get('admintoken');
         $userIp = Request::ip();
-        cookie('usertoken', null);
+        cookie('admintoken', null);
 //        当前ip与上一次登录ip不一样，禁止强制退出，使用普通退出
         try {
             $userinfo = Db::name("user")->where([
