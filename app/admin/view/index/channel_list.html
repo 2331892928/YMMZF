@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin index Examples</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="../../../assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="../../../assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="stylesheet" href="../../../assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="../../../assets/css/amazeui.datatables.min.css"/>
+    <link rel="stylesheet" href="../../../assets/css/app.css">
+    <link rel="stylesheet" href="../../../assets/css/jquery-confirm.min.css">
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
+</head>
+
+<body data-type="widgets">
+<script src="../../../assets/js/theme.js"></script>
+<div class="am-g tpl-g">
+    <!-- 头部 -->
+    <header>
+        <!-- logo -->
+        <div class="am-fl tpl-header-logo">
+            <a href="javascript:;"><img src="../../../assets/img/logo.png" alt=""></a>
+        </div>
+        <!-- 右侧内容 -->
+        <div class="tpl-header-fluid">
+            <!-- 侧边切换 -->
+            <div class="am-fl tpl-header-switch-button am-icon-list">
+                    <span>
+
+                </span>
+            </div>
+            <!-- 搜索 -->
+            <div class="am-fl tpl-header-search">
+                <form class="tpl-header-search-form" action="javascript:;">
+                    <button class="tpl-header-search-btn am-icon-search"></button>
+                    <input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
+                </form>
+            </div>
+            <!-- 其它功能-->
+            <div class="am-fr tpl-header-navbar">
+                <ul>
+                    <!-- 欢迎语 -->
+                    <li class="am-text-sm tpl-header-navbar-welcome">
+                        <a href="javascript:;">欢迎你, <span>Amaze UI</span> </a>
+                    </li>
+
+                    <!-- 新邮件 -->
+                    <li class="am-dropdown tpl-dropdown" data-am-dropdown>
+                        <a href="javascript:;" class="am-dropdown-toggle tpl-dropdown-toggle" data-am-dropdown-toggle>
+                            <i class="am-icon-envelope"></i>
+                            <span class="am-badge am-badge-success am-round item-feed-badge">4</span>
+                        </a>
+                        <!-- 弹出列表 -->
+                        <ul class="am-dropdown-content tpl-dropdown-content">
+                            <li class="tpl-dropdown-menu-messages">
+                                <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
+                                    <div class="menu-messages-ico">
+                                        <img src="../../../assets/img/user04.png" alt="">
+                                    </div>
+                                    <div class="menu-messages-time">
+                                        3小时前
+                                    </div>
+                                    <div class="menu-messages-content">
+                                        <div class="menu-messages-content-title">
+                                            <i class="am-icon-circle-o am-text-success"></i>
+                                            <span>夕风色</span>
+                                        </div>
+                                        <div class="am-text-truncate"> Amaze UI 的诞生，依托于 GitHub 及其他技术社区上一些优秀的资源；Amaze UI
+                                            的成长，则离不开用户的支持。
+                                        </div>
+                                        <div class="menu-messages-content-time">2016-09-21 下午 16:40</div>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="tpl-dropdown-menu-messages">
+                                <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
+                                    <div class="menu-messages-ico">
+                                        <img src="../../../assets/img/user02.png" alt="">
+                                    </div>
+                                    <div class="menu-messages-time">
+                                        5天前
+                                    </div>
+                                    <div class="menu-messages-content">
+                                        <div class="menu-messages-content-title">
+                                            <i class="am-icon-circle-o am-text-warning"></i>
+                                            <span>禁言小张</span>
+                                        </div>
+                                        <div class="am-text-truncate"> 为了能最准确的传达所描述的问题， 建议你在反馈时附上演示，方便我们理解。</div>
+                                        <div class="menu-messages-content-time">2016-09-16 上午 09:23</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tpl-dropdown-menu-messages">
+                                <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
+                                    <i class="am-icon-circle-o"></i> 进入列表…
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- 新提示 -->
+                    <li class="am-dropdown" data-am-dropdown>
+                        <a href="javascript:;" class="am-dropdown-toggle" data-am-dropdown-toggle>
+                            <i class="am-icon-bell"></i>
+                            <span class="am-badge am-badge-warning am-round item-feed-badge">5</span>
+                        </a>
+
+                        <!-- 弹出列表 -->
+                        <ul class="am-dropdown-content tpl-dropdown-content">
+                            <li class="tpl-dropdown-menu-notifications">
+                                <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
+                                    <div class="tpl-dropdown-menu-notifications-title">
+                                        <i class="am-icon-line-chart"></i>
+                                        <span> 有6笔新的销售订单</span>
+                                    </div>
+                                    <div class="tpl-dropdown-menu-notifications-time">
+                                        12分钟前
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tpl-dropdown-menu-notifications">
+                                <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
+                                    <div class="tpl-dropdown-menu-notifications-title">
+                                        <i class="am-icon-star"></i>
+                                        <span> 有3个来自人事部的消息</span>
+                                    </div>
+                                    <div class="tpl-dropdown-menu-notifications-time">
+                                        30分钟前
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tpl-dropdown-menu-notifications">
+                                <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
+                                    <div class="tpl-dropdown-menu-notifications-title">
+                                        <i class="am-icon-folder-o"></i>
+                                        <span> 上午开会记录存档</span>
+                                    </div>
+                                    <div class="tpl-dropdown-menu-notifications-time">
+                                        1天前
+                                    </div>
+                                </a>
+                            </li>
+
+
+                            <li class="tpl-dropdown-menu-notifications">
+                                <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
+                                    <i class="am-icon-bell"></i> 进入列表…
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- 退出 -->
+                    <li class="am-text-sm">
+                        <a href="javascript:;">
+                            <span class="am-icon-sign-out"></span> 退出
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+    <!-- 风格切换 -->
+    <div class="tpl-skiner">
+        <div class="tpl-skiner-toggle am-icon-cog">
+        </div>
+        <div class="tpl-skiner-content">
+            <div class="tpl-skiner-content-title">
+                选择主题
+            </div>
+            <div class="tpl-skiner-content-bar">
+                <span class="skiner-color skiner-white" data-color="theme-white"></span>
+                <span class="skiner-color skiner-black" data-color="theme-black"></span>
+            </div>
+        </div>
+    </div>
+    <!-- 侧边导航栏 -->
+    <div class="left-sidebar">
+        <!-- 用户信息 -->
+        <div class="tpl-sidebar-user-panel">
+            <div class="tpl-user-panel-slide-toggleable">
+                <div class="tpl-user-panel-profile-picture">
+                    <img src="../../../assets/img/user04.png" alt="">
+                </div>
+                <span class="user-panel-logged-in-text">
+              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+              禁言小张
+          </span>
+                <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
+            </div>
+        </div>
+
+
+        <!-- 菜单 -->
+        {:$page_menu}
+    </div>
+
+
+    <!-- 内容区域 -->
+    <div class="tpl-content-wrapper">
+        <div class="row-content am-cf">
+            <div class="row">
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                    <div class="widget am-cf">
+                        <div class="widget-head am-cf">
+                            <div class="widget-title  am-cf">微信店员列表</div>
+
+
+                        </div>
+                        <div class="widget-body  am-fr">
+
+                            <div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+                                <div class="am-form-group">
+                                    <div class="am-btn-toolbar">
+                                        <div class="am-btn-group am-btn-group-xs">
+                                            <button type="button" class="am-btn am-btn-default am-btn-success" id="add-prompt-toggle"><span
+                                                    class="am-icon-plus"></span> 新增
+                                            </button>
+
+<!--                                            <button type="button" class="am-btn am-btn-default am-btn-danger"><span-->
+<!--                                                    class="am-icon-trash-o"></span> 删除-->
+<!--                                            </button>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="am-form" id="search">
+                                <input type="number" name="page" style="display:none" value="{$variable_channel_page_number}">
+                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+                                    <div class="am-form-group tpl-table-list-select">
+                                            <select data-am-selected="{btnSize: 'sm'}" name="option">
+                                                <option value="4">全部</option>
+                                                <option value="0">启用</option>
+                                                <option value="1">禁用</option>
+                                                <option value="2">在线</option>
+                                                <option value="3">离线</option>
+                                            </select>
+                                    </div>
+                                </div>
+                                <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
+                                    <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
+                                            <input type="text" class="am-form-field" placeholder="wxid/wx昵称/通道id" name="field">
+                                        <span class="am-input-group-btn">
+                                            <button class="am-btn am-btn-default am-btn-success tpl-table-list-field am-icon-search"
+                                                    type="submit"></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="am-u-sm-12">
+                                <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black ">
+                                    <thead>
+                                    <tr>
+                                        <th>通道ID</th>
+                                        <th>头像</th>
+                                        <th>wxid</th>
+                                        <th>wx昵称</th>
+                                        <th>添加时间</th>
+                                        <th>心跳时间</th>
+                                        <th>在线状态</th>
+                                        <th>启用状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {volist name='variable_channel_list' id='channel_list_key'}
+
+                                    {if
+                                    ($channel_list_key.lasttime>$variable_channel_now_time-$variable_channel_pay_heartbeat
+                                    && $channel_list_key.status=='0')}
+                                    <tr class="am-success">
+                                        {else /}
+                                    <tr class="am-warning">
+                                        {/if}
+                                        <td class="am-text-middle">
+                                            {$channel_list_key.id}
+                                        </td>
+                                        <td class="am-text-middle">
+                                            <img src="{$channel_list_key.avatar_address}" class="tpl-table-line-img"
+                                                 alt="">
+                                        </td>
+                                        <td class="am-text-middle">
+
+                                                    <span
+                                                            {if (strlen($channel_list_key.software_id)>19)}
+                                                            data-am-popover="{content: '{$channel_list_key.software_id}',trigger:'click',theme:'success'}"
+                                                        {/if}
+                                                    >
+                                                        {if (strlen($channel_list_key.software_id)>19)}
+                                                            {:substr($channel_list_key.software_id,0,19)}...
+                                                        {else /}
+                                                            {$channel_list_key.software_id}
+                                                        {/if}
+                                                        </span>
+                                        </td>
+                                        <td class="am-text-middle">{$channel_list_key.nickname}</td>
+                                        <td class="am-text-middle">{:date("Y-m-d H:i:s",$channel_list_key.addtime)}</td>
+                                        <td class="am-text-middle">{:date("Y-m-d H:i:s",$channel_list_key.lasttime)}
+                                        </td>
+                                        <!--                                                am-alert am-alert-warning-->
+                                        {if
+                                        ($channel_list_key.lasttime>$variable_channel_now_time-$variable_channel_pay_heartbeat)}
+                                        <td class="am-text-middle"><span class="am-alert am-alert-success">
+                                                     在线
+                                                </span></td>
+                                        {else /}
+                                        <td class="am-text-middle"><span class="am-alert am-alert-warning">
+                                                     离线
+                                                </span></td>
+                                        {/if}
+
+                                        {if ($channel_list_key.status=='0')}
+                                        <td class="am-text-middle"><span class="am-alert am-alert-success" onclick="edit_channel('status',{$channel_list_key.id})">
+                                                     启用
+                                                </span></td>
+                                        {else /}
+                                        <td class="am-text-middle"><span class="am-alert am-alert-warning" onclick="edit_channel('status',{$channel_list_key.id})">
+                                                     禁用
+                                                </span></td>
+                                        {/if}
+
+                                        <td class="am-text-middle">
+                                            <div class="tpl-table-black-operation">
+<!--                                                <a href="javascript:;">-->
+<!--                                                    <i class="am-icon-pencil"></i> 编辑-->
+<!--                                                </a>-->
+                                                <a href="javascript:edit_channel('delete',{$channel_list_key.id});" class="tpl-table-black-operation-del">
+                                                    <i class="am-icon-trash"></i> 删除
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {/volist}
+                                    <!-- more data -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="am-u-lg-12 am-cf">
+
+                                <div class="am-fr">
+                                    <!--                                        <ul class="am-pagination tpl-pagination">-->
+                                    <!--                                            <li class="am-disabled"><a href="#">«</a></li>-->
+                                    <!--                                            <li class="am-active"><a href="#">1</a></li>-->
+                                    <!--                                            <li><a href="#">2</a></li>-->
+                                    <!--                                            <li><a href="#">3</a></li>-->
+                                    <!--                                            <li><a href="#">4</a></li>-->
+                                    <!--                                            <li><a href="#">5</a></li>-->
+                                    <!--                                            <li><a href="#">»</a></li>-->
+                                    <!--                                        </ul>-->
+                                    {$variable_channel_page|raw}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{:$page_modal}
+
+<script src="http://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js"></script>
+
+<script src="../../../assets/js/jquery-confirm.min.js"></script>
+
+<script src="../../../assets/js/app.js"></script>
+<script>
+    // 函数
+    function edit_channel(type,id){
+        $.confirm({
+            title: '询问!',
+            content: '确认此操作吗？',
+            type: 'orange',
+            typeAnimated: true,
+            buttons: {
+                tryAgain: {
+                    text: '确认',
+                    btnClass: 'btn-orange',
+                    action: function(){
+                        $.ajax({
+                            type : 'POST',
+                            url : '../ajax/edit_channel_wx',
+                            data:{id:id,type:type},
+                            dataType : 'json',
+                            success : function(data) {
+                                if(data.code === 200){
+                                    $.confirm({
+                                        title: '成功!',
+                                        content: "操作成功",
+                                        type: 'green',
+                                        typeAnimated: true,
+                                        buttons: {
+                                            tryAgain: {
+                                                text: '确定',
+                                                btnClass: 'btn-green',
+                                                action: function(){
+                                                    // 刷新
+                                                    window.location.reload()
+                                                }
+                                            }
+                                        }
+                                    });
+                                }else{
+                                    $.alert({
+                                        title: '错误!',
+                                        content: data.msg,
+                                    });
+                                }
+                            }
+                        });
+                    }
+                },
+                close: {
+                    text:"取消",
+                    action: function () {
+                    }
+                }
+            }
+        });
+
+    }
+    $(function() {
+        // 渲染页面
+
+        var Request = {};
+        Request = GetRequest();
+        var option = Request['option'];
+        if (option!==undefined){
+            $("select[name='option']").val(option)
+            // 触发渲染select
+            $("select[name='option']").trigger('changed.selected.amui');
+
+
+        }
+
+        $('#add-prompt-toggle').on('click', function() {
+            $('#add-prompt').modal({
+                relatedTarget: this,
+                onConfirm: function(e) {
+                    var wxid = e.data || '';
+                    if (wxid === ''){
+                        $.confirm({
+                            title: '错误!',
+                            content: '请填写wxid',
+                            type: 'red',
+                            typeAnimated: true,
+                            buttons: {
+                                tryAgain: {
+                                    text: '确定',
+                                    btnClass: 'btn-red',
+                                    action: function(){
+                                    }
+                                }
+                            }
+                        });
+                        return
+                    }
+                    $.ajax({
+                        type : 'POST',
+                        url : '../ajax/add_channel_wx',
+                        data:{wxid:wxid},
+                        dataType : 'json',
+                        success : function(data) {
+                            if(data.code === 200){
+                                $.confirm({
+                                    title: '成功!',
+                                    content: "成功添加",
+                                    type: 'green',
+                                    typeAnimated: true,
+                                    buttons: {
+                                        tryAgain: {
+                                            text: '确定',
+                                            btnClass: 'btn-green',
+                                            action: function(){
+                                                // 刷新
+                                                window.location.reload()
+                                            }
+                                        }
+                                    }
+                                });
+                            }else{
+                                $.alert({
+                                    title: '错误!',
+                                    content: data.msg,
+                                });
+                            }
+                        }
+                    });
+
+                },
+                onCancel: function(e) {
+                    console.log("取消")
+                }
+            });
+        });
+
+        $('#doc-form-file').on('change', function() {
+            // 文件上传
+            var fileNames = '';
+            $.each(this.files, function() {
+                fileNames += '<span class="am-badge">' + this.name + '</span> ';
+            });
+            $('#file-list').html(fileNames);
+            var submit = new FormData()
+            var files = $('#doc-form-file')[0].files
+            if(files.length <= 0) {
+                return false
+            }
+            submit.append('image',files[0])
+            $.ajax({
+                method: 'post',
+                url: '../ajax/image_upload',
+                //表单数据
+                data: submit,
+                processData: false,
+                contentType: false,
+                success:function (res){
+                    if (res.code===200){
+                        console.log("success")
+                    } else {
+                        $("#doc-form-file").val(null);
+                        $('#file-list').html("");
+                        $.confirm({
+                            useBootstrap: false,
+                            boxWidth: "20%",
+                            title: '错误!',
+                            content: res.msg,
+                            type: 'red',
+                            typeAnimated: true,
+                            buttons: {
+                                tryAgain: {
+                                    text: '确定',
+                                    btnClass: 'btn-red',
+                                    action: function(){
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }
+            })
+        });
+        // $('#search').submit(function (e) {
+        //     e.preventDefault();
+        //     var Request = {};
+        //     Request = GetRequest();
+        //     Request = jsontoQuery([Request])
+        // })
+    });
+</script>
+</body>
+
+</html>

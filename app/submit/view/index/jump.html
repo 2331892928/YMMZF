@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>正在为您跳转到支付页面，请稍候...</title>
+  <style type="text/css">
+    body{margin:0;padding:0}
+    #waiting{position:absolute;left:50%;top:50%;height:35px;margin:-35px 0 0 -160px;padding:20px;font:16px/30px "Helvetica Neue",Helvetica,Arial,sans-serif;background:#f9fafc url(/static/img/loading.gif) no-repeat 20px 20px;text-indent:40px;border:1px solid #c5d0dc}
+  </style>
+</head>
+<body>
+<p id="waiting">正在为您跳转到支付页面，请稍候...</p>
+<script>window.location.replace('{:$url}')</script>
+
+</body>
+</html>
