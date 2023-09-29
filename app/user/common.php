@@ -29,11 +29,11 @@ class UserUtils{
         if (!$userinfo){
             return false;
         }
-        if ($userinfo['ip']!=$userIp){
-            // 强制退出
-            $this->logout(true);
-            return false;
-        }
+//        if ($userinfo['ip']!=$userIp){
+//            // 强制退出
+//            $this->logout(true);
+//            return false;
+//        }
         return $userinfo;
 
     }
