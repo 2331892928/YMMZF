@@ -251,7 +251,7 @@ class Ajax
                     } catch (\Exception $e) {
                         return json(['code'=>900,'msg'=>"网站未配置正确，请咨询站长进行配置，当前错误代码：900".$e->getMessage()]);
                     }
-                    return json(['code'=>900,'msg'=>"网站未配置正确，请咨询站长进行配置，当前错误代码：900".$e->getMessage()]);
+//                    return json(['code'=>900,'msg'=>"网站未配置正确，请咨询站长进行配置，当前错误代码：900".$e->getMessage()]);
                 }
                 // 获取二维码内容
                 if(!$decodedData->isFound()) {
