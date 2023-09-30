@@ -245,7 +245,7 @@ class Ajax
                     $decodedData = $decoder->decode($savename);
                 }catch (\Exception $e){
                     // 默认java位置无java，转变yumjava
-                    $decoder->setJavaPath('/usr/lib/jvm/jre-1.8.0');
+                    $decoder->setJavaPath('/usr/lib/jvm');
                     try {
                         $decodedData = $decoder->decode($savename);
                     } catch (\Exception $e) {
