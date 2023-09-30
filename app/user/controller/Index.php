@@ -47,7 +47,7 @@ class Index
             'page_menu' => $page_menu,
             'page_modal' => $page_modal,
             'variable_user' => $this->UserInfo,
-            'variable_domain' => Request::domain(true),
+            'variable_domain' => Request::domain(true).'/',
             'variable_geetest_id' => $geetest_id,
             'variable_geetest_key' => $geetest_key,
         ]);
