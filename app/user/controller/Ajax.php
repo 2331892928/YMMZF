@@ -239,7 +239,7 @@ class Ajax
                     'try_harder' => true,
                 );
                 $decoder = new PHPZxingDecoder($config);
-                $decoder->setJavaPath('java');
+//                $decoder->setJavaPath('java');
 
                 try{
                     $decodedData = $decoder->decode($savename);
