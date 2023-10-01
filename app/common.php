@@ -212,6 +212,15 @@ class Utils{
 
     }
 
+    /**
+     * @param $userid
+     * @param $robotid
+     * @param $nickname
+     * @param $avatar_address
+     * @param $collection_type
+     * @return array
+     * @throws \think\db\exception\DbException
+     */
     public function channel_heartbeat($userid,$robotid,$nickname,$avatar_address,$collection_type=4){
         $where_list = [
             'software_id'=>$robotid,
@@ -230,14 +239,14 @@ class Utils{
             $id = Db::name("channel")->where($where_list)->find();
         } catch (\think\db\exception\DbException $e) {
 
-            return false;
+            return ['code'=>false, 'msg'=>'数据库错误'];
         }
         if ($id == null){
-            return false;
+            return ['code'=>false, 'msg'=>'无此通道'];
         }
         // 是否禁用
         if ($id['status']=='1'){
-
+            return ['code'=>false, 'msg'=>'通道被禁用'];
         }
         if ($userid==0){
             Db::name("channel")->where([
@@ -248,15 +257,19 @@ class Utils{
             ]);
         }
 
-        $id = Db::name("channel")->where(['id'=>$id['id']])->update([
-            'lasttime'=>time(),
-            'nickname'=>urldecode($nickname),
-            'avatar_address'=>urldecode($avatar_address)
-        ]);
+        try {
+            $id = Db::name("channel")->where(['id' => $id['id']])->update([
+                'lasttime' => time(),
+                'nickname' => urldecode($nickname),
+                'avatar_address' => urldecode($avatar_address)
+            ]);
+        } catch (\think\db\exception\DbException $e) {
+            return ['code'=>false, 'msg'=>'数据库错误'];
+        }
         if ($id != 0){
-            return true;
+            return ['code'=>true, 'msg'=>'success'];
         }else {
-            return false;
+            return ['code'=>false, 'msg'=>'无此通道'];
         }
     }
 

@@ -165,10 +165,10 @@ class App
         // 记录心跳
 
         $flag = $this->Utils->channel_heartbeat($data['pid'],$data['robotid'],$data['nickname'],$data['avatar_address'],4);
-        if ($flag){
+        if ($flag['code']){
             return json(['code'=>200,'msg'=>"success",'data'=>$this->Utils->e(['code'=>200])]);
         } else {
-            return json(['code'=>201,'msg'=>"无此通道"]);
+            return json(['code'=>201,'msg'=>$flag['msg']]);
         }
 
 
