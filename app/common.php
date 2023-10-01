@@ -318,6 +318,15 @@ class Utils{
         return $Geetest->validate($lot_number,$captcha_output,$pass_token,$gen_time);
 
     }
+
+    /**
+     * 获取客户端ip
+     * @param string $type HTTP_X_FORWARDED_FOR HTTP_CLIENT_ip REMOTE_ADDR
+     * @return mixed
+     */
+    public function getClientIp($type="HTTP_X_FORWARDED_FOR"){
+        return $_SERVER[$type];
+    }
     public function generateRandomString($length = 10) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $string = '';
