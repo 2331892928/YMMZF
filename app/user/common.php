@@ -18,7 +18,7 @@ class UserUtils{
     public function isLogin(){
         // 获取cookie中的值，并判断此cookie和此ip是否是上一次登录的对应的，否则强制退出
         $userToken = Cookie::get('usertoken');
-        $userIp = Request::ip();
+        $userIp = $this->Utils->getClientIp();
         try {
             $userinfo = Db::name("user")->where([
                 'ordinary_token' => $userToken,
@@ -29,11 +29,11 @@ class UserUtils{
         if (!$userinfo){
             return false;
         }
-//        if ($userinfo['ip']!=$userIp){
-//            // 强制退出
-//            $this->logout(true);
-//            return false;
-//        }
+        if ($userinfo['ip']!=$userIp){
+            // 强制退出
+            $this->logout(true);
+            return false;
+        }
         return $userinfo;
 
     }
@@ -67,7 +67,7 @@ class UserUtils{
                 'id' => $userinfo['id']
             ])->update([
                 'ordinary_token' => $userToken,
-                'ip' => Request::ip(),
+                'ip' => $this->Utils->getClientIp(),
                 'lasttime' => time()
             ]);
         } catch (\think\db\exception\DbException $e) {
@@ -83,7 +83,7 @@ class UserUtils{
      */
     public function logout($qz = false){
         $userToken = Cookie::get('usertoken');
-        $userIp = Request::ip();
+        $userIp = $this->Utils->getClientIp();
         cookie('usertoken', null);
 //        当前ip与上一次登录ip不一样，禁止强制退出，使用普通退出
         try {

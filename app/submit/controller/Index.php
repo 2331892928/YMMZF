@@ -232,7 +232,7 @@ class Index
                 'endtime'=>$now_time+$user['pay_time'],
                 'endtime_time'=>date('Y-m-d H:i:s',$now_time+$user['pay_time']),
                 'domain'=>$domain,
-                'ip'=>Request::ip(),
+                'ip'=>$this->Utils->getClientIp(),
                 'trade_no'=>$trade_no,
                 'out_trade_no'=>$data['out_trade_no'],
                 'robotid'=>$tdid['software_id'],

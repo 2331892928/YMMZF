@@ -17,12 +17,6 @@ class Index
     }
     public function index()
     {
-        print_r($_SERVER);
-        print_r("</br>");
-        print_r($this->Utils->getClientIp());
-        print_r("</br>");
-        print_r($this->Utils->getClientIp("REMOTE_ADDR"));
-        print_r("</br>");
         return '您好！这是一个[api]示例应用';
     }
     public function getshop(){
