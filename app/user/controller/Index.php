@@ -26,6 +26,9 @@ class Index
         ];
 
         $page_menu = View::fetch("index/other/menu",['page_config' => $page_config]);
+        $page_header_body = View::fetch("index/other/header_body",['page_menu' => $page_menu]);
+        $page_sidebar = View::fetch("index/other/sidebar",['page_config' => $page_config]);
+        $page_skiner = View::fetch("index/other/skiner",['page_config' => $page_config]);
         $page_modal = View::fetch("index/other/modal");
         // 获取当前方法
         $action = Request::action(true);
@@ -44,7 +47,9 @@ class Index
         $geetest_id = $this->Utils->getConfig("geetest_id");
         $geetest_key = $this->Utils->getConfig("geetest_key");
         View::assign([
-            'page_menu' => $page_menu,
+            'page_header_body' => $page_header_body,
+            'page_sidebar' => $page_sidebar,
+            'page_skiner' => $page_skiner,
             'page_modal' => $page_modal,
             'variable_user' => $this->UserInfo,
             'variable_domain' => Request::domain(true).'/',
