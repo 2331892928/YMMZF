@@ -320,12 +320,22 @@ class Utils{
     }
 
     /**
-     * 获取客户端ip
+     * 获取客户端ip ，传入type优先获取传入的，否则自动获取最真实的客户端ip
      * @param string $type HTTP_X_FORWARDED_FOR HTTP_CLIENT_ip REMOTE_ADDR
      * @return mixed
      */
-    public function getClientIp($type="HTTP_X_FORWARDED_FOR"){
-        return $_SERVER[$type];
+    public function getClientIp($type=null){
+        if ($type == null){
+            if (array_key_exists("HTTP_X_FORWARDED_FOR",$_SERVER)){
+                return $_SERVER["HTTP_X_FORWARDED_FOR"];
+            } else {
+                return $_SERVER["REMOTE_ADDR"];
+            }
+        } else {
+            return $_SERVER[$type];
+        }
+
+
     }
     public function generateRandomString($length = 10) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
