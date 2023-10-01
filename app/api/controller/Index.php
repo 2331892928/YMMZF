@@ -17,6 +17,8 @@ class Index
     }
     public function index()
     {
+        print_r($_SERVER);
+        print_r("</br>");
         print_r($this->Utils->getClientIp());
         print_r("</br>");
         print_r($this->Utils->getClientIp("HTTP_CLIENT_ip"));
