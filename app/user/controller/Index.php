@@ -24,7 +24,9 @@ class Index
         $page_config = [
             'user' => Request::root() .'/index/'
         ];
-
+        View::assign([
+            'variable_domain' => Request::domain(true).'/'
+        ]);
         $page_menu = View::fetch("index/other/menu",['page_config' => $page_config]);
         $page_header_body = View::fetch("index/other/header_body",['page_menu' => $page_menu]);
         $page_sidebar = View::fetch("index/other/sidebar",['page_config' => $page_config]);
