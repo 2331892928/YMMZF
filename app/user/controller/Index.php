@@ -24,10 +24,11 @@ class Index
         $page_config = [
             'user' => Request::root() .'/index/'
         ];
-        $page_menu = View::fetch("index/other/menu",['page_config' => $page_config]);
-        $page_header_body = View::fetch("index/other/header_body",['page_config' => $page_config,'page_menu' => $page_menu]);
-        $page_sidebar = View::fetch("index/other/sidebar",['page_config' => $page_config]);
-        $page_skiner = View::fetch("index/other/skiner",['page_config' => $page_config]);
+        View::assign(['page_config' => $page_config]);
+        $page_menu = View::fetch("index/other/menu");
+        $page_header_body = View::fetch("index/other/header_body",['page_menu' => $page_menu]);
+        $page_sidebar = View::fetch("index/other/sidebar");
+        $page_skiner = View::fetch("index/other/skiner");
         $page_modal = View::fetch("index/other/modal");
         // 获取当前方法
         $action = Request::action(true);

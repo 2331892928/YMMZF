@@ -92,7 +92,8 @@ class Ajax
 
     }
     public function logout(){
-
+        $this->UserUtils->logout();
+        return json(['code'=>200,'msg'=>"success"]);
     }
     public function add_channel(){
         // 参数验证

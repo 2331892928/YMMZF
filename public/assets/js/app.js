@@ -540,3 +540,63 @@ $('.sidebar-nav-sub-title').on('click', function() {
 })
 
 
+// 退出
+function logout(){
+    var url = window.location.href+'/ajax/logout';
+    if (window.location.pathname!=='/user'){
+        url = '../ajax/logout'
+    }
+
+    $.confirm({
+        title: '询问!',
+        content: '确认此操作吗？',
+        type: 'orange',
+        typeAnimated: true,
+        buttons: {
+            tryAgain: {
+                text: '确认',
+                btnClass: 'btn-orange',
+                action: function(){
+                    $.ajax({
+                        type : 'POST',
+                        url : url,
+                        dataType : 'json',
+                        success : function(data) {
+                            if(data.code === 200){
+                                $.confirm({
+                                    title: '成功!',
+                                    content: "退出成功",
+                                    type: 'green',
+                                    typeAnimated: true,
+                                    buttons: {
+                                        tryAgain: {
+                                            text: '确定',
+                                            btnClass: 'btn-green',
+                                            action: function(){
+                                                // 刷新
+                                                setTimeout(function () {
+                                                    window.location.reload()
+                                                }, 1500);
+
+                                            }
+                                        }
+                                    }
+                                });
+                            }else{
+                                $.alert({
+                                    title: '错误!',
+                                    content: data.msg,
+                                });
+                            }
+                        }
+                    });
+                }
+            },
+            close: {
+                text:"取消",
+                action: function () {
+                }
+            }
+        }
+    });
+}

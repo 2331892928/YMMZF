@@ -170,32 +170,52 @@
             document.body.removeChild(dummy);
         }
         function random_key(){
-            $.ajax({
-                type : 'POST',
-                url : '../ajax/user_random_key',
-                dataType : 'json',
-                success : function(data) {
-                    if(data.code === 200){
-                        $.confirm({
-                            content:"成功",
-                            buttons:{
-                                ok:{
-                                    text:"确定",
-                                    action:function (index) {
-                                        window.location.reload()
-                                    }
-                                },
-                            },
-                        })
-                    }else{
+            $.confirm({
+                title: '询问!',
+                content: '确认此操作吗？',
+                type: 'orange',
+                typeAnimated: true,
+                buttons: {
+                    tryAgain: {
+                        text: '确认',
+                        btnClass: 'btn-orange',
+                        action: function(){
+                            $.ajax({
+                                type : 'POST',
+                                url : '../ajax/user_random_key',
+                                dataType : 'json',
+                                success : function(data) {
+                                    if(data.code === 200){
+                                        $.confirm({
+                                            content:"成功",
+                                            buttons:{
+                                                ok:{
+                                                    text:"确定",
+                                                    action:function (index) {
+                                                        window.location.reload()
+                                                    }
+                                                },
+                                            },
+                                        })
+                                    }else{
 
-                        $.alert({
-                            title: '错误!',
-                            content: data.msg,
-                        });
+                                        $.alert({
+                                            title: '错误!',
+                                            content: data.msg,
+                                        });
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    close: {
+                        text:"取消",
+                        action: function () {
+                        }
                     }
                 }
             });
+
         }
 
     </script>
